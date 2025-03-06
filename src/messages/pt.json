@@ -1,0 +1,136 @@
+{
+  "navigation": {
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "experience": "Experiência",
+    "contact": "Contato"
+  },
+  "theme": {
+    "toggle": "Alternar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "language": {
+    "switch": "Mudar idioma",
+    "portuguese": "Português",
+    "english": "Inglês"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Seu Nome",
+    "title": "Desenvolvedor Front-end",
+    "description": "Especializado em criar experiências digitais excepcionais com React.js, Next.js, TypeScript e React Native.",
+    "contact": "Entre em contato",
+    "projects": "Ver projetos",
+    "scrollDown": "Rolar para baixo"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "subtitle": "Conheça minha história",
+    "paragraph1": "Sou um desenvolvedor front-end apaixonado por criar interfaces de usuário bonitas e funcionais. Com experiência em React.js, Next.js, TypeScript e React Native, tenho trabalhado em diversos projetos que me permitiram aprimorar minhas habilidades e conhecimentos.",
+    "paragraph2": "Meu objetivo é sempre entregar produtos de alta qualidade que proporcionem a melhor experiência possível aos usuários. Estou constantemente aprendendo novas tecnologias e metodologias para me manter atualizado no mundo em constante evolução do desenvolvimento web.",
+    "personalInfo": "Informações Pessoais",
+    "name": "Nome",
+    "age": "Idade",
+    "years": "anos",
+    "location": "Localização",
+    "interests": "Interesses",
+    "interest1": "Desenvolvimento Web",
+    "interest2": "UX/UI Design",
+    "interest3": "Novas Tecnologias",
+    "imageAlt": "Foto de perfil"
+  },
+  "skills": {
+    "title": "Minhas Habilidades",
+    "description": "Estas são as tecnologias e ferramentas com as quais trabalho diariamente.",
+    "frontend": "Front-end",
+    "mobile": "Mobile",
+    "backend": "Back-end",
+    "languages": "Linguagens",
+    "tools": "Ferramentas",
+    "versionControl": "Controle de Versão"
+  },
+  "projects": {
+    "title": "Meus Projetos",
+    "description": "Aqui estão alguns dos projetos nos quais trabalhei recentemente.",
+    "demo": "Demo",
+    "code": "Código",
+    "viewMore": "Ver mais no GitHub",
+    "project1": {
+      "title": "E-commerce Moderno",
+      "description": "Um e-commerce completo com carrinho de compras, pagamentos e painel de administração."
+    },
+    "project2": {
+      "title": "Aplicativo de Delivery",
+      "description": "Um aplicativo móvel para pedidos de comida com rastreamento em tempo real."
+    },
+    "project3": {
+      "title": "Dashboard Analítico",
+      "description": "Um dashboard interativo para visualização de dados e métricas de negócios."
+    }
+  },
+  "experience": {
+    "title": "Minha Experiência",
+    "description": "Minha jornada profissional até agora.",
+    "job1": {
+      "position": "Desenvolvedor Front-end Sênior",
+      "company": "Empresa XYZ",
+      "period": "Jan 2022 - Presente",
+      "description": "Liderando o desenvolvimento de aplicações web com React e Next.js.",
+      "responsibilities": [
+        "Desenvolvimento de interfaces de usuário responsivas e acessíveis",
+        "Implementação de novas funcionalidades e manutenção de código existente",
+        "Colaboração com designers e desenvolvedores back-end"
+      ]
+    },
+    "job2": {
+      "position": "Desenvolvedor Front-end",
+      "company": "Empresa ABC",
+      "period": "Mar 2020 - Dez 2021",
+      "description": "Trabalhando em projetos web e mobile com React e React Native.",
+      "responsibilities": [
+        "Desenvolvimento de aplicações web com React.js e TypeScript",
+        "Criação de aplicativos móveis com React Native",
+        "Otimização de performance e experiência do usuário"
+      ]
+    },
+    "job3": {
+      "position": "Desenvolvedor Web Júnior",
+      "company": "Startup DEF",
+      "period": "Jun 2018 - Fev 2020",
+      "description": "Iniciando minha carreira com desenvolvimento web front-end.",
+      "responsibilities": [
+        "Desenvolvimento de interfaces com HTML, CSS e JavaScript",
+        "Implementação de designs responsivos",
+        "Aprendizado e aplicação de frameworks modernos"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Tem um projeto em mente? Vamos conversar sobre como posso ajudar.",
+    "getInTouch": "Fale Comigo",
+    "contactText": "Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato comigo por qualquer um dos meios abaixo ou preenchendo o formulário.",
+    "location": "Localização",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "successMessage": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Seu nome",
+      "email": "E-mail",
+      "emailPlaceholder": "seu.email@exemplo.com",
+      "subject": "Assunto",
+      "subjectPlaceholder": "Assunto da mensagem",
+      "message": "Mensagem",
+      "messagePlaceholder": "Escreva sua mensagem aqui...",
+      "submit": "Enviar Mensagem"
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados."
+  }
+}
+
