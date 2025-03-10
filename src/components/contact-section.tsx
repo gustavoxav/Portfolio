@@ -3,15 +3,15 @@
 import type React from "react"
 
 import { useState } from "react"
-import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
+import * as Form from "@radix-ui/react-form"
+import * as Label from "@radix-ui/react-label"
+import { useTranslations } from "next-intl"
 
 export function ContactSection() {
   const t = useTranslations("contact")
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -28,16 +28,13 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend or a service like Formspree
     console.log("Form submitted:", formState)
-    // Reset form
     setFormState({
       name: "",
       email: "",
       subject: "",
       message: "",
     })
-    // Show success message (in a real app)
     alert(t("successMessage"))
   }
 
@@ -105,68 +102,89 @@ export function ContactSection() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <Form.Root onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
+                  <Label.Root htmlFor="name" className="text-sm font-medium">
                     {t("form.name")}
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formState.name}
-                    onChange={handleChange}
-                    required
-                    placeholder={t("form.namePlaceholder")}
-                  />
+                  </Label.Root>
+                  <Form.Field name="name">
+                    <Form.Control asChild>
+                      <input
+                        id="name"
+                        value={formState.name}
+                        onChange={handleChange}
+                        required
+                        placeholder={t("form.namePlaceholder")}
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      />
+                    </Form.Control>
+                  </Form.Field>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
+                  <Label.Root htmlFor="email" className="text-sm font-medium">
                     {t("form.email")}
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    required
-                    placeholder={t("form.emailPlaceholder")}
-                  />
+                  </Label.Root>
+                  <Form.Field name="email">
+                    <Form.Control asChild>
+                      <input
+                        id="email"
+                        type="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                        required
+                        placeholder={t("form.emailPlaceholder")}
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      />
+                    </Form.Control>
+                  </Form.Field>
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">
+                <Label.Root htmlFor="subject" className="text-sm font-medium">
                   {t("form.subject")}
-                </label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  value={formState.subject}
-                  onChange={handleChange}
-                  required
-                  placeholder={t("form.subjectPlaceholder")}
-                />
+                </Label.Root>
+                <Form.Field name="subject">
+                  <Form.Control asChild>
+                    <input
+                      id="subject"
+                      value={formState.subject}
+                      onChange={handleChange}
+                      required
+                      placeholder={t("form.subjectPlaceholder")}
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    />
+                  </Form.Control>
+                </Form.Field>
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
+                <Label.Root htmlFor="message" className="text-sm font-medium">
                   {t("form.message")}
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formState.message}
-                  onChange={handleChange}
-                  required
-                  placeholder={t("form.messagePlaceholder")}
-                  rows={5}
-                />
+                </Label.Root>
+                <Form.Field name="message">
+                  <Form.Control asChild>
+                    <textarea
+                      id="message"
+                      value={formState.message}
+                      onChange={handleChange}
+                      required
+                      placeholder={t("form.messagePlaceholder")}
+                      rows={5}
+                      className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    />
+                  </Form.Control>
+                </Form.Field>
               </div>
-              <Button type="submit" className="w-full">
-                <Send className="h-4 w-4 mr-2" />
-                {t("form.submit")}
-              </Button>
-            </form>
+              <Form.Submit asChild>
+                <button
+                  type="submit"
+                  className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                >
+                  <Send className="h-4 w-4 mr-2" />
+                  {t("form.submit")}
+                </button>
+              </Form.Submit>
+            </Form.Root>
           </motion.div>
         </div>
       </div>
