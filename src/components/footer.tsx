@@ -1,8 +1,8 @@
-import { useTranslations } from "next-intl"
 import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function Footer() {
-  const t = useTranslations("footer")
+  const t = useTranslations("footer");
 
   return (
     <footer className="border-t py-6 md:py-8">

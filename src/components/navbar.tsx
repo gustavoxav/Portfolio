@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
-import { Button } from "@/components/ui/button"
+import { Button } from "@radix-ui/themes"
 import { Menu, X } from "lucide-react"
 
 export function Navbar() {
@@ -26,7 +26,7 @@ export function Navbar() {
         </div>
 
         {/* Mobile menu button */}
-        <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu}>
+        <Button variant="ghost" className="md:hidden" onClick={toggleMenu}>
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           <span className="sr-only">Toggle menu</span>
         </Button>

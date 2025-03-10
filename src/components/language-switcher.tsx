@@ -2,8 +2,8 @@
 
 import { usePathname, useRouter } from "next/navigation"
 import { useLocale, useTranslations } from "next-intl"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Button } from "@radix-ui/themes"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 import { Globe } from "lucide-react"
 
 export function LanguageSwitcher() {
@@ -23,7 +23,7 @@ export function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="rounded-full">
+        <Button variant="outline" className="rounded-full">
           <Globe className="h-[1.2rem] w-[1.2rem]" />
           <span className="sr-only">{t("switch")}</span>
         </Button>
