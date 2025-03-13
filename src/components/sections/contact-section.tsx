@@ -5,11 +5,15 @@ import type React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
-export function ContactSection() {
-  const t = useTranslations("contact");
+interface ContactSectionProps {
+  t: (key: string) => string
+}
 
+export function ContactSection({ t }: ContactSectionProps) {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -106,21 +110,20 @@ export function ContactSection() {
                   <label htmlFor="name" className="text-sm font-medium">
                     {t("form.name")}
                   </label>
-                  <input
+                  <Input
                     id="name"
                     name="name"
                     value={formState.name}
                     onChange={handleChange}
                     required
                     placeholder={t("form.namePlaceholder")}
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
                     {t("form.email")}
                   </label>
-                  <input
+                  <Input
                     id="email"
                     name="email"
                     type="email"
@@ -128,7 +131,6 @@ export function ContactSection() {
                     onChange={handleChange}
                     required
                     placeholder={t("form.emailPlaceholder")}
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   />
                 </div>
               </div>
@@ -136,21 +138,20 @@ export function ContactSection() {
                 <label htmlFor="subject" className="text-sm font-medium">
                   {t("form.subject")}
                 </label>
-                <input
+                <Input
                   id="subject"
                   name="subject"
                   value={formState.subject}
                   onChange={handleChange}
                   required
                   placeholder={t("form.subjectPlaceholder")}
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 />
               </div>
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
                   {t("form.message")}
                 </label>
-                <textarea
+                <Textarea
                   id="message"
                   name="message"
                   value={formState.message}
@@ -158,16 +159,12 @@ export function ContactSection() {
                   required
                   placeholder={t("form.messagePlaceholder")}
                   rows={5}
-                  className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 />
               </div>
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              >
+              <Button type="submit" className="w-full">
                 <Send className="h-4 w-4 mr-2" />
                 {t("form.submit")}
-              </button>
+              </Button>
             </form>
           </motion.div>
         </div>

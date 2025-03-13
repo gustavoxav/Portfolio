@@ -1,7 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { Button } from "@radix-ui/themes"
+import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -26,10 +26,10 @@ export function HeroSection() {
         <p className="text-xl md:text-2xl text-muted-foreground mb-8">{t("title")}</p>
         <p className="text-lg mb-10 max-w-2xl mx-auto">{t("description")}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button onClick={scrollToContact}>
+          <Button size="lg" onClick={scrollToContact}>
             {t("contact")}
           </Button>
-          <Button variant="outline" asChild>
+          <Button size="lg" variant="outline" asChild>
             <a href="#projects">{t("projects")}</a>
           </Button>
         </div>

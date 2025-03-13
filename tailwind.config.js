@@ -73,6 +73,6 @@ module.exports = {
       },
     },
   },
-  plugins: [(await import("tailwindcss-animate")).default],
+  plugins: [require("tailwindcss-animate")],
 }
 

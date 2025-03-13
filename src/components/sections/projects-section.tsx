@@ -3,11 +3,14 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { ExternalLink, Github } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 
-export function ProjectsSection() {
-  const t = useTranslations("projects")
+interface ProjectsSectionProps {
+  t: (key: string) => string
+}
 
+export function ProjectsSection({ t }: ProjectsSectionProps) {
   const projects = [
     {
       title: t("project1.title"),
@@ -59,11 +62,11 @@ export function ProjectsSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden h-full flex flex-col">
+              <Card className="overflow-hidden h-full flex flex-col">
                 <div className="relative h-48 w-full">
                   <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
                 </div>
-                <div className="p-6 flex-1 flex flex-col">
+                <CardContent className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-muted-foreground mb-4 flex-1">{project.description}</p>
 
@@ -76,40 +79,41 @@ export function ProjectsSection() {
                   </div>
 
                   <div className="flex gap-3 mt-auto">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium shadow-sm hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-                    >
-                      <ExternalLink className="h-4 w-4 mr-1" />
-                      {t("demo")}
-                    </a>
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium shadow-sm hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-                    >
-                      <Github className="h-4 w-4 mr-1" />
-                      {t("code")}
-                    </a>
+                    <Button size="sm" variant="outline" asChild>
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        {t("demo")}
+                      </a>
+                    </Button>
+                    <Button size="sm" variant="outline" asChild>
+                      <a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1"
+                      >
+                        <Github className="h-4 w-4" />
+                        {t("code")}
+                      </a>
+                    </Button>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            {t("viewMore")}
-          </a>
+          <Button asChild>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+              {t("viewMore")}
+            </a>
+          </Button>
         </div>
       </div>
     </section>

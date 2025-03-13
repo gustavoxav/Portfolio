@@ -1,9 +1,10 @@
 import { Github, Linkedin, Mail, Twitter } from "lucide-react"
-import { useTranslations } from "next-intl"
 
-export function Footer() {
-  const t = useTranslations("footer");
+interface FooterProps {
+  t: (key: string) => string
+}
 
+export function Footer({ t }: FooterProps) {
   return (
     <footer className="border-t py-6 md:py-8">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
