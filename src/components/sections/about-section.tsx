@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { useTranslations } from "next-intl"
 
-export function AboutSection() {
-  const t = useTranslations("about");
+interface AboutSectionProps {
+  t: (key: string) => string
+}
 
+export function AboutSection({ t }: AboutSectionProps) {
   return (
     <section id="about" className="py-16 md:py-24">
       <div className="container">

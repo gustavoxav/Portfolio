@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion"
 import { Code, Database, GitBranch, Layout, Smartphone, Terminal } from "lucide-react"
-import { useTranslations } from "next-intl"
 
-export function SkillsSection() {
-  const t = useTranslations("skills");
+interface SkillsSectionProps {
+  t: (key: string) => string
+}
 
+export function SkillsSection({ t }: SkillsSectionProps) {
   const skills = [
     {
       category: t("frontend"),
