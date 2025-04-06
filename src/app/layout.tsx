@@ -4,17 +4,13 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ClientProvider } from "@/components/client-provider"
-import dynamic from "next/dynamic"
 
 const inter = Inter({ subsets: ["latin"] })
-
-// Use dynamic import with SSR disabled for the Navbar
-const Navbar = dynamic(() => import("@/components/navbar"), { ssr: false })
 
 export const metadata: Metadata = {
   title: "Portfolio | Your Name",
   description: "Personal portfolio website showcasing my work and skills",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -33,7 +29,6 @@ export default function RootLayout({
           storageKey="portfolio-theme"
         >
           <ClientProvider>
-            <Navbar />
             {children}
           </ClientProvider>
         </ThemeProvider>
@@ -41,7 +36,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'
