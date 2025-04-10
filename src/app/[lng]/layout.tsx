@@ -1,15 +1,10 @@
 import type React from "react";
 import type { Metadata } from "next";
-import "./globals.css";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ClientProvider } from "@/components/client-provider";
-import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
-
-const Navbar = dynamic(() => import("@/components/navbar"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Portfolio | Your Name",
@@ -31,10 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
           storageKey="portfolio-theme">
-          <ClientProvider>
-            <Navbar />
-            {children}
-          </ClientProvider>
+          {children}
         </ThemeProvider>
       </body>
     </html>
