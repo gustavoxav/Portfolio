@@ -1,0 +1,80 @@
+{
+  "navbar": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "theme": "Theme"
+  },
+  "theme": {
+    "title": "Theme Settings",
+    "subtitle": "Customize the appearance of the application",
+    "color": "Color Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "follow": "Follow system theme",
+    "followDescription": "Automatically switch between light and dark themes based on your system preferences",
+    "current": "Current theme"
+  },
+  "language": {
+    "language": "Language",
+    "en": "English",
+    "pt": "Portuguese"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "I'm a full-stack developer specializing in building exceptional digital experiences.",
+    "cta": {
+      "work": "View My Work",
+      "contact": "Contact Me"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "p1": "I'm a passionate developer with experience in building web applications using modern technologies. I specialize in creating responsive, accessible, and performant web experiences.",
+    "p2": "With a background in both frontend and backend development, I enjoy working on all aspects of web development, from designing user interfaces to implementing server-side logic and database structures.",
+    "cv": "Download CV",
+    "skills": "My Skills"
+  },
+  "skills": {
+    "title": "My Skills",
+    "subtitle": "Technologies I've been working with"
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Check out some of my recent work",
+    "code": "Code",
+    "demo": "Demo",
+    "first": {
+      "title": "Project One",
+      "description": "A web application built with Next.js and Tailwind CSS."
+    },
+    "second": {
+      "title": "Project Two",
+      "description": "An e-commerce platform with payment integration."
+    },
+    "third": {
+      "title": "Project Three",
+      "description": "A mobile-first responsive dashboard."
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Feel free to contact me for any work or suggestions",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
+

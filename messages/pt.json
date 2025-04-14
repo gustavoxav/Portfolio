@@ -1,0 +1,80 @@
+{
+  "navbar": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "skills": "Habilidades",
+    "contact": "Contato",
+    "theme": "Tema"
+  },
+  "theme": {
+    "title": "Configurações de Tema",
+    "subtitle": "Personalize a aparência da aplicação",
+    "color": "Tema de Cores",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "follow": "Seguir tema do sistema",
+    "followDescription": "Alternar automaticamente entre temas claro e escuro com base nas preferências do seu sistema",
+    "current": "Tema atual"
+  },
+  "language": {
+    "language": "Idioma",
+    "en": "Inglês",
+    "pt": "Português"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "role": "Sou um desenvolvedor full-stack especializado em criar experiências digitais excepcionais.",
+    "cta": {
+      "work": "Ver Meu Trabalho",
+      "contact": "Contate-me"
+    }
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "p1": "Sou um desenvolvedor apaixonado com experiência na construção de aplicações web usando tecnologias modernas. Especializo-me em criar experiências web responsivas, acessíveis e de alto desempenho.",
+    "p2": "Com experiência tanto em desenvolvimento frontend quanto backend, gosto de trabalhar em todos os aspectos do desenvolvimento web, desde o design de interfaces de usuário até a implementação de lógica do lado do servidor e estruturas de banco de dados.",
+    "cv": "Baixar CV",
+    "skills": "Minhas Habilidades"
+  },
+  "skills": {
+    "title": "Minhas Habilidades",
+    "subtitle": "Tecnologias com as quais tenho trabalhado"
+  },
+  "projects": {
+    "title": "Meus Projetos",
+    "subtitle": "Confira alguns dos meus trabalhos recentes",
+    "code": "Código",
+    "demo": "Demo",
+    "first": {
+      "title": "Projeto Um",
+      "description": "Uma aplicação web construída com Next.js e Tailwind CSS."
+    },
+    "second": {
+      "title": "Projeto Dois",
+      "description": "Uma plataforma de e-commerce com integração de pagamento."
+    },
+    "third": {
+      "title": "Projeto Três",
+      "description": "Um painel responsivo com prioridade para dispositivos móveis."
+    }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Sinta-se à vontade para me contatar para qualquer trabalho ou sugestão",
+    "email": "Email",
+    "phone": "Telefone",
+    "location": "Localização",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "send": "Enviar Mensagem"
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados."
+  }
+}
+
