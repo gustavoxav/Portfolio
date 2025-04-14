@@ -1,10 +1,10 @@
 "use client"
 
 import { ThemeControlPanel } from "@/components/theme-control-panel"
-import { useLanguage } from "@/contexts/language-context"
+import {useTranslations} from 'next-intl';
 
 export default function ThemePage() {
-  const { t } = useLanguage()
+  const t = useTranslations('themePage');
 
   return (
     <main className="min-h-screen pt-24 px-4">
