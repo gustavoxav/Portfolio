@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,23 +8,20 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export function LanguageSwitcher() {
-  const [mounted, setMounted] = useState(false);
   const t = useTranslations("language");
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
+  const locale = useLocale();
+  const router = useRouter();
+  const language = locale as string;
 
   return (
     <div className="flex items-center gap-4">
       <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground">
         <span className="font-medium text-foreground capitalize">
-          {/* {language === "en" ? "EN" : "PT"} */}
+          {language === "en" ? "EN" : "PT"}
         </span>
       </div>
 
@@ -43,24 +39,30 @@ export function LanguageSwitcher() {
           align="end"
           className="border-border/50 bg-background/95 backdrop-blur-sm">
           <DropdownMenuItem
-            // onClick={() => setLanguage("en")}
-            className={`flex items-center gap-2 `}
-            //   ${
-            //   language === "en" ? "bg-primary/10 text-primary" : "hover:bg-primary/10 hover:text-primary"
-            // }
-          >
+            onClick={() => 
+              router.push(`/${language === "en" ? "pt" : "en"}`)
+            }
+            className={`flex items-center gap-2 
+               ${
+                 language === "en"
+                   ? "bg-primary/10 text-primary"
+                   : "hover:bg-primary/10 hover:text-primary"
+               }`}>
             <span className="w-5 h-5 flex items-center justify-center text-xs font-bold rounded-full bg-primary/10">
               EN
             </span>
             <span>{t("en")}</span>
           </DropdownMenuItem>
           <DropdownMenuItem
-            // onClick={() => setLanguage("pt")}
-            className={`flex items-center gap-2`}>
-            {/* // ${  language === "pt"
-            //     ? "bg-primary/10 text-primary"
-            //     : "hover:bg-primary/10 hover:text-primary"
-            // } */}
+            onClick={() => 
+              router.push(`/${language === "pt" ? "en" : "pt"}`)
+            }
+            className={`flex items-center gap-2
+               ${
+                 language === "pt"
+                   ? "bg-primary/10 text-primary"
+                   : "hover:bg-primary/10 hover:text-primary"
+               }`}>
             <span className="w-5 h-5 flex items-center justify-center text-xs font-bold rounded-full bg-primary/10">
               PT
             </span>

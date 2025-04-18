@@ -27,11 +27,11 @@ export default async function LocaleLayout({
   params
 }: {
   readonly children: React.ReactNode;
-  readonly params: any;
+  readonly params: Promise<{ lng: string }>;
 }) {
   const { lng } = await params
   const messages = await getMessages(lng);
-console.log(messages, 'messages', lng)
+
   return (
     <html lang={lng} suppressHydrationWarning>
       <body className={inter.className}>
