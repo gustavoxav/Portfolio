@@ -12,6 +12,7 @@ const Contact = dynamic(() => import("@/components/contact"), { ssr: false });
 const Navbar = dynamic(() => import("@/components/navbar"), { ssr: false });
 
 export default function Home() {
+
   return (
     <>
       <Navbar />
