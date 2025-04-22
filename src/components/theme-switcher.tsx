@@ -16,13 +16,12 @@ export function ThemeSwitcher() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const t = useTranslations("theme");
-  // Prevent hydration mismatch
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) {
-    // Return a placeholder with the same dimensions to prevent layout shift
     return (
       <Button
         variant="outline"
@@ -33,15 +32,13 @@ export function ThemeSwitcher() {
     );
   }
 
-  // Determine which icon to show based on the current theme
-  const ThemeIcon =
-    theme === "light"
-      ? Sun
-      : theme === "dark"
-      ? Moon
-      : resolvedTheme === "dark"
-      ? Moon
-      : Sun;
+  const getThemeIcon = () => {
+    if (theme === "light") return Sun;
+    if (theme === "dark") return Moon;
+    return resolvedTheme === "dark" ? Moon : Sun;
+  };
+
+  const ThemeIcon = getThemeIcon();
 
   const themeIconColor =
     theme === "light" || (theme === "system" && resolvedTheme === "light")

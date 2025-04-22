@@ -2,8 +2,6 @@
 
 import dynamic from "next/dynamic";
 
-// Import static components or components that don't use language context
-// Use dynamic imports with SSR disabled for components that use language context
 const Hero = dynamic(() => import("@/components/hero"), { ssr: false });
 const About = dynamic(() => import("@/components/about"), { ssr: false });
 const Projects = dynamic(() => import("@/components/projects"), { ssr: false });

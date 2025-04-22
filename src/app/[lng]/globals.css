@@ -64,32 +64,19 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
   }
-}
 
-@layer base {
   * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    border-color: hsl(var(--border));
   }
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem; /* Add padding for fixed navbar */
-  }
-}
-
-@layer components {
-  .gradient-heading {
-    @apply bg-gradient-to-r from-primary to-blue-400 dark:from-primary dark:to-blue-300 bg-clip-text text-transparent;
+    scroll-padding-top: 4rem;
   }
 
-  .section-padding {
-    @apply py-20 md:py-24;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 dark:hover:bg-secondary/40;
+  body {
+    color: hsl(var(--foreground));
+    background-color: hsl(var(--background));
+    transition: color 0.3s ease, background-color 0.3s ease;
   }
 }

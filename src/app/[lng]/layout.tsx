@@ -32,6 +32,8 @@ export default async function LocaleLayout({
   const { lng } = await params
   const messages = await getMessages(lng);
 
+  console.log("locale", lng);
+  console.log("messages", messages);
   return (
     <html lang={lng} suppressHydrationWarning>
       <body className={inter.className}>

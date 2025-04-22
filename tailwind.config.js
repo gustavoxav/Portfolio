@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindcssAnimate from "tailwindcss-animate";
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -72,7 +73,6 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    plugins: [tailwindcssAnimate],
   },
-  plugins: [require("tailwindcss-animate")],
-}
-
+};
